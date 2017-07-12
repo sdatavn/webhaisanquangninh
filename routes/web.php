@@ -13,6 +13,7 @@ Auth::routes();
 Route::get('trangchu', function () {
 	return redirect('/');
 });
+Route::get('admin/suabaii','adminController@suabaii');
 Route::get('admin/quanlyslide/uphinh','adminController@uphinhslide');
 Route::post('admin/quanlyslide/uphinh','adminController@uphinhslide1');
 Route::get('admin/quanlyslide/suahinh/{id}','adminController@suahinhslide');

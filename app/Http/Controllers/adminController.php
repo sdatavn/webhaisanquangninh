@@ -8,7 +8,7 @@ use \Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image as Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use File;
 class adminController extends Controller
 {
     public function __construct()//bắt buộc login mới vào đc
@@ -64,7 +64,7 @@ class adminController extends Controller
     	return view('admin/quanlydonhang');
     }
     public function baihaisan(){
-    	$noidung = \App\haisan::paginate(9);
+    	$noidung = \App\haisan::orderBy("id","DESC")->paginate(9);
     	$menu = \App\menu::all();
     	return view('admin/baihaisan',['noidung'=>$noidung,'menu'=>$menu]);
     }
@@ -91,7 +91,7 @@ class adminController extends Controller
             $a=1;
         if($a<4){
             foreach($files as $file):
-                $imgbv = new \App\imgbaiviet();
+            $imgbv = new \App\imgbaiviet();
             $imgbv->id_haisan = $haisan->id;
             $imgbv->name =$haisan->id.$a;
             $imgbv->save();
@@ -100,7 +100,6 @@ class adminController extends Controller
             endforeach;
         }
         endif;
-        
         return redirect("admin/baihaisan")->withSuccessMessage('Đăng Thành Công');;
     }
     public function sua($id)
@@ -119,8 +118,9 @@ class adminController extends Controller
                 }
             }
         }
+        $img = \App\imgbaiviet::where("id_haisan","=",$id)->get();
         $theloai1 = \App\theloai::where("id","<>",$idd)->where("id_menu","=",$hs1)->get();
-        return view("admin/suabai",['idd'=>$idd,'namee'=>$namee,'theloai1'=>$theloai1,'noidung'=>$suahaisan,'theloai'=>$theloai])->withSuccessMessage('Sữa Bài Thành Công');
+        return view("admin/suabai",['img'=>$img,'idd'=>$idd,'namee'=>$namee,'theloai1'=>$theloai1,'noidung'=>$suahaisan,'theloai'=>$theloai])->withSuccessMessage('Sữa Bài Thành Công');
     }
     public function suabai(Request $request){
     	$haisan = new \App\haisan();
@@ -141,6 +141,10 @@ class adminController extends Controller
             $a=1;
         if($a<4){
             foreach($files as $file):
+            $imgbv = new \App\imgbaiviet();
+            $imgbv->id_haisan = $suahaisan->id;
+            $imgbv->name =$suahaisan->id.$a;
+            $imgbv->save();
                 \Intervention\Image\Facades\Image::make($file->getRealPath())->fit(280, 280)->save(base_path() . "/public/responsive_filemanager/thumbs/baiviet/".$suahaisan->id."".$a.".jpg");
             $a=$a+1;
             endforeach;
@@ -263,6 +267,9 @@ class adminController extends Controller
     public function quanlydonhang(){
         $donhang = \App\donhang::paginate(10);;
         return view('admin/quanlydonhang',['donhang'=>$donhang]);
+    }
+    public function suabaii(Request $request){
+        \App\imgbaiviet::where("name","=",$request->kt)->delete();
     }
     public function quanlydonhangg(Request $request){
         $kiemtra = \App\donhang::find($request->kt);

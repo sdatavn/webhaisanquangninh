@@ -305,7 +305,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END CONTAINER -->
         <!-- BEGIN FOOTER -->
         <div class="page-footer">
-            <div class="page-footer-inner"> 2017 &copy; võ Tấn Hải
+            <div class="page-footer-inner"> 2017 &copy; Sdata.vn
                 <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">By Hải Sản</a>
             </div>
             <div class="scroll-to-top">

@@ -67,7 +67,7 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 detail-product">
                 <h1 style=" text-transform: capitalize;">{{$sp->title}}</h1>
                 <label for="price">Giá Sản Phẩm</label>
-                <div class="price" id="price-preview"><span class="product_price">{{$sp->gia}} VNĐ</span></div>
+                <div class="price" id="price-preview"><span class="product_price">{{number_format($sp->gia)}} VNĐ</span></div>
                 <!--start form -->
                 <div class="desc-title" style="margin-bottom:10px;">Mô tả ngắn </div>
                 {!!str_limit($sp->noidung,500,'...')!!}

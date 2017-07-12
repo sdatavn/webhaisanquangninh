@@ -77,7 +77,7 @@ Hải Sản Biển
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                     <div class="product-item product-resize 1002031408 fixheight" style="height: 277px;"> 
                         <div class="image image-resize" style="height: auto;">
-                            <a href="{{url('sanpham')}}/{{$hs->url}}" ><img src="{{url('public/responsive_filemanager/thumbs/baiviet')}}/{{$hs->id}}1.jpg"></a>
+                            <a href="{{url('sanpham')}}/{{$hs->url}}" ><img src="{{url('public/responsive_filemanager/thumbs/baiviet')}}/{{$hs->id}}.jpg"></a>
                         </div>
                         <div class="product-overlay hidden-xs">
                             <a href="{{url('sanpham')}}/{{$hs->url}}" title="Quick Shop" class="quick_shop action_button">
