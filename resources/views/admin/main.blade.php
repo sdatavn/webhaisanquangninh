@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 
+<!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 4.5.2
 Author: KeenThemes
@@ -53,7 +53,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link rel="stylesheet" href="{{url('public/ckeditor/samples/css/samples.css')}}">
         <link rel="stylesheet" href="{{url('public/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css')}}">
         <script src="{{ URL::asset('public/js-css/jquery-1.11.3.min.js')}}" type='text/javascript'></script>
-        <script type="text/javascript" src="{{ URL::asset('public/validate/jquery.validate.js')}}"></script>     
+        <script type="text/javascript" src="{{ URL::asset('public/validate/jquery.validate.js')}}"></script>
         <style type="text/css">label.error{
     color:red;
     padding-left: 13px;
@@ -153,7 +153,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         </li>
                             </ul>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a href="{{url('admin/menu')}}" class="nav-link nav-toggle">
                                 <i class=" icon-wrench"></i>
@@ -293,7 +293,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         </ul>
                         <div class="page-toolbar">
                             <div class="btn-group pull-right">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -364,11 +364,10 @@ License: You must have a valid license purchased only from themeforest(the above
                         $("#theloai").html(data);
                         })
                     });
-                    
                 </script>
           <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  @yield('script')           
+  @yield('script')
         <!-- END THEME LAYOUT SCRIPTS -->
     </body>
 

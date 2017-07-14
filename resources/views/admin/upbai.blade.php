@@ -66,12 +66,12 @@ Thêm Bài
                                             <div class="form-group">
                                                 <label class="control-label">Nội Dung</label>
                                                 <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
-                                                <script> CKEDITOR.replace( 'editor1' ,{ 
+                                                <script> CKEDITOR.replace( 'editor1' ,{
                                                     filebrowserBrowseUrl : '../public/responsive_filemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
                                                     filebrowserUploadUrl : '../public/responsive_filemanager/source/dialog.php?type=2&editor=ckeditor&fldr=',
                                                     filebrowserImageBrowseUrl : '../public/responsive_filemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' ,
                                                     height: '400px'
-                                                }); 
+                                                });
                                             </script>
                                         </div>
                                         <div class="margin-top-10">
@@ -79,6 +79,7 @@ Thêm Bài
                                         </div>
                                     </div>
                                 </form>
+
                                 <script type="text/javascript">
                                     $("#upbai").validate({
                                         rules:{
@@ -87,7 +88,10 @@ Thêm Bài
                                             },
                                             editor1:{
                                                 required:true,
-                                            }
+                                            },
+                                            gia:{
+                                                  number: true,
+                                                },
                                         },
                                         messages:{
                                             title:{
@@ -95,9 +99,13 @@ Thêm Bài
                                             },
                                             editor1:{
                                                 required:"Vui Lòng Không Để Trống",
-                                            }
+                                            },
+                                            gia:{
+                                              number:"cc",
+                                            },
                                         }
                                     })
+
                                 </script>
                             </div>
                         </div>
