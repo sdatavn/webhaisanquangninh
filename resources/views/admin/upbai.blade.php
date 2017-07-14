@@ -101,7 +101,7 @@ Thêm Bài
                                                 required:"Vui Lòng Không Để Trống",
                                             },
                                             gia:{
-                                              number:"cc",
+                                              number:"Vui Lòng Kiểm Tra Lại Giá Tiền",
                                             },
                                         }
                                     })
